@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Stack{
+	private:
+		int n; //���������� "�������"
+		int *stack; //������������ ������ (� ������� xD)
+	public:
+		Stack(int num)
+		{
+				n = num;
+				stack = new int[num];
+			    for (int i = 0; i < n; i++)
+					stack[i] = i;
+		}
+		void push(int element) //add element
+		{
+			stack[n] = element; //???
+			n++;
+		}
+		void pop()//dell element
+		{
+			n--;
+		}
+		void peek() //hand element
+		{
+			cout << stack[n-1] << endl;
+		}
+};
+int main(){
+	setlocale(LC_ALL, "rus");
+	int num;
+	cout << "Amount of elements." << endl;
+	cin >> num;
+	int element;
+	cout << "Element: " << endl;
+	cin >> element;
+	Stack prime(num);
+	prime.peek();
+	prime.push(element);
+	prime.peek();
+	prime.pop();
+	prime.peek();
+
+	return 0;
+}
